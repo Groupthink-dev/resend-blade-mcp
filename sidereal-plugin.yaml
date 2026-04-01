@@ -1,0 +1,64 @@
+name: resend-blade-mcp
+version: "0.1.0"
+description: "Resend transactional email — send, manage contacts, broadcasts, templates, domains, webhooks"
+author: piersdd
+licence: MIT
+tier: certified
+homepage: https://github.com/Groupthink-dev/resend-blade-mcp
+
+services:
+  email:
+    send: resend_send
+    send_batch: resend_send_batch
+    get: resend_get_email
+    list: resend_list_emails
+    cancel: resend_cancel_scheduled
+  contacts:
+    create: resend_create_contact
+    list: resend_list_contacts
+    update: resend_update_contact
+    delete: resend_delete_contact
+  segments:
+    create: resend_create_segment
+    list: resend_list_segments
+    delete: resend_delete_segment
+  broadcasts:
+    create: resend_create_broadcast
+    send: resend_send_broadcast
+    list: resend_list_broadcasts
+    delete: resend_delete_broadcast
+  templates:
+    create: resend_create_template
+    list: resend_list_templates
+    get: resend_get_template
+    publish: resend_publish_template
+  domains:
+    add: resend_add_domain
+    list: resend_list_domains
+    get: resend_get_domain
+    verify: resend_verify_domain
+  webhooks:
+    create: resend_create_webhook
+    list: resend_list_webhooks
+    delete: resend_delete_webhook
+  logs:
+    list: resend_list_logs
+
+install:
+  runtime: uv
+  package: resend-blade-mcp
+  command: resend-blade-mcp
+
+env:
+  - name: RESEND_API_KEY
+    description: "Resend API key (resend.com/api-keys)"
+    secret: true
+  - name: RESEND_WRITE_ENABLED
+    description: "Enable write operations (send, create, update, delete)"
+    default: "false"
+
+requires:
+  sidereal: ">=0.3.0"
+
+conformance:
+  last_tested: "2026-04-01"
