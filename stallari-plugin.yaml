@@ -2,7 +2,7 @@ name: resend-blade-mcp
 version: "0.1.1"
 description: "Resend transactional email — send, manage contacts, broadcasts, templates, domains, webhooks"
 author: piersdd
-licence: MIT
+license: MIT
 tier: certified
 homepage: https://github.com/Groupthink-dev/resend-blade-mcp
 contract: transactional-email-v1
